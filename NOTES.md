@@ -76,25 +76,25 @@ TAs. Please take that poll!
 
 Here is some example code:
 
-int two_digits(int tens, int ones) {
-    return 10 * tens + ones;
-}
-
-int times100(int number) {
-    return 100 * number;
-}
-
-int main(void) {
-    int A, B, C, D;
-    cin >> A;
-    cin >> B;
-    cin >> C;
-    cin >> D;
-    int hi = two_digits(A,B);
-    int lo = two_digits(C,D);
-    int n = times100(hi) + lo;
-    cout << n << endl;
-}
+    int two_digits(int tens, int ones) {
+        return 10 * tens + ones;
+    }
+    
+    int times100(int number) {
+        return 100 * number;
+    }
+    
+    int main(void) {
+        int A, B, C, D;
+        cin >> A;
+        cin >> B;
+        cin >> C;
+        cin >> D;
+        int hi = two_digits(A,B);
+        int lo = two_digits(C,D);
+        int n = times100(hi) + lo;
+        cout << n << endl;
+    }
 
 In the above, `main` calls `two_digits` twice. There are two
 *call sites* within `main` where `two_digits` gets invoked.
@@ -104,29 +104,29 @@ The code, when given single digit integers, say, 5, 1, 3, 7,
 outputs the four-digit number with those as its digits,
 5137, say.
 
-int two_digits(int tens, int ones) {
-    return 10 * tens + ones;
-}
-
-int times100(int number) {
-    return 100 * number;
-}
-
-int four_digits(int w, int x, int y, int z) {
-    int hi = two_digits(w,x);
-    int lo = two_digits(y,z);
-    return times100(hi) + lo;
-}
-
-int main(void) {
-    int A, B, C, D;
-    cin >> A;
-    cin >> B;
-    cin >> C;
-    cin >> D;
-    int n = four_digits(A,B,C,D);
-    cout << n << endl;
-}
+    int two_digits(int tens, int ones) {
+        return 10 * tens + ones;
+    }
+    
+    int times100(int number) {
+        return 100 * number;
+    }
+    
+    int four_digits(int w, int x, int y, int z) {
+        int hi = two_digits(w,x);
+        int lo = two_digits(y,z);
+        return times100(hi) + lo;
+    }
+    
+    int main(void) {
+        int A, B, C, D;
+        cin >> A;
+        cin >> B;
+        cin >> C;
+        cin >> D;
+        int n = four_digits(A,B,C,D);
+        cout << n << endl;
+    }
 
 In the above, `four_digits` takes over the role
 of `main`. It calls `two_digits` and `times100`.
